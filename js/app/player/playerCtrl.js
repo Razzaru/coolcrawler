@@ -2,13 +2,15 @@ var app = angular.module('crawler');
 
 app.controller('PlayerController', PlayerController);
 
-function PlayerController() {
+function PlayerController(HeroService) {
     this.keys = {
         left: 97,
         top: 119,
         right: 100,
         down: 115
-    }
+    };
+    
+    this.hero = HeroService.hero;
 
     this.goSomewhere = function (evt) {
         switch (evt.keyCode) {
